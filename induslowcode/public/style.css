@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2e2e2e;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+#main-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#sidebar {
+    width: 250px; /* 调整为较小的宽度，避免占据过多空间 */
+    background-color: #333;
+    color: #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+#content {
+    flex-grow: 1;
+    background-color: #1e1e1e;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+}
+
+#embedded-webview {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.sidebar-header {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px; /* 缩小 padding */
+    border-bottom: 1px solid #555;
+}
+
+.search-bar {
+    margin-top: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    width: calc(100% - 10px);
+    background-color: #444;
+    color: #ccc;
+}
+
+.module-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px; /* 缩小顶部 margin */
+}
+
+.module-item {
+    padding: 8px; /* 缩小 padding */
+    margin: 5px 0;
+    border-radius: 4px;
+    display: block;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: #ccc;
+}
+
+.module-item:hover {
+    background-color: #444;
+}
+
+.icon {
+    width: 14px; /* 缩小图标大小 */
+    height: 14px;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.project-icon {
+    background-color: #ffc107;
+    border-radius: 50%;
+}
+
+.system-icon {
+    background-color: #b0bec5;
+    border-radius: 50%;
+}
+
+.module-icon {
+    background-color: #ff5722;
+    border-radius: 50%;
+}
+
+.data-model-icon {
+    background-color: #4caf50;
+    border-radius: 50%;
+}
+
+.folder-icon {
+    background-color: #2196f3;
+    border-radius: 4px;
+}
+
+.sub-module-list, .sub-sub-module-list {
+    list-style: none;
+    padding-left: 15px; /* 减小缩进 */
+    display: none;
+    margin-top: 5px;
+}
+
+.sub-module-item {
+    padding: 5px 0;
+    cursor: pointer;
+    color: #bbb;
+    display: block;
+    align-items: center;
+    font-size: 14px; /* 缩小字体 */
+}
+
+.sub-module-item:hover {
+    color: #fff;
+}

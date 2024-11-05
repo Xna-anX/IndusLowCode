@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndusLowCode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="sidebar">
+        <div class="sidebar-header">
+            <h3>App Explorer</h3>
+            <input type="text" placeholder="Search..." class="search-bar">
+        </div>
+        <ul class="module-list">
+            <li class="module-item" onclick="toggleTree(this)">
+                <span class="icon project-icon"></span>
+                <span class="module-title">App</span>
+                <ul class="sub-module-list">
+                    <li class="sub-module-item" onclick="event.stopPropagation(); toggleTree(this)">
+                        <span class="icon folder-icon"></span>
+                        Domain model
+                        <ul class="sub-sub-module-list">
+                            <li class="sub-module-item">Entity 1</li>
+                            <li class="sub-module-item">Entity 2</li>
+                        </ul>
+                    </li>
+                    <li class="sub-module-item" onclick="event.stopPropagation(); toggleTree(this)">
+                        <span class="icon folder-icon"></span>
+                        Workflows
+                        <ul class="sub-sub-module-list">
+                            <li class="sub-module-item">Workflow A</li>
+                            <li class="sub-module-item">Workflow B</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="module-item" onclick="toggleTree(this)">
+                <span class="icon system-icon"></span>
+                <span class="module-title">System</span>
+                <ul class="sub-module-list">
+                    <li class="sub-module-item" onclick="event.stopPropagation(); toggleTree(this)">
+                        <span class="icon folder-icon"></span>
+                        Domain model
+                        <ul class="sub-sub-module-list">
+                            <li class="sub-module-item">ContextType</li>
+                            <li class="sub-module-item">DeviceType</li>
+                        </ul>
+                    </li>
+                    <li class="sub-module-item">Images</li>
+                </ul>
+            </li>
+            <li class="module-item" onclick="toggleTree(this)">
+                <span class="icon module-icon"></span>
+                <span class="module-title">Module</span>
+                <ul class="sub-module-list">
+                    <li class="sub-module-item" onclick="event.stopPropagation(); toggleTree(this)">
+                        <span class="icon folder-icon"></span>
+                        Domain model
+                        <ul class="sub-sub-module-list">
+                            <li class="sub-module-item">Entity 1</li>
+                            <li class="sub-module-item">Entity 2</li>
+                        </ul>
+                    </li>
+                    <li class="sub-module-item">Settings</li>
+                    <li class="sub-module-item">Images</li>
+                </ul>
+            </li>
+            <li class="module-item" onclick="toggleTree(this)">
+                <span class="icon data-model-icon"></span>
+                <span class="module-title">Model</span>
+                <ul class="sub-module-list">
+                    <li class="sub-module-item">Data Entity 1</li>
+                    <li class="sub-module-item">Data Entity 2</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleTree(element) {
+            const subModuleList = element.querySelector('ul');
+            if (subModuleList) {
+                const isVisible = subModuleList.style.display === 'block';
+                subModuleList.style.display = isVisible ? 'none' : 'block';
+            }
+        }
+    </script>
+    <script src="../src/render.js"></script>
+</body>
+
+</html>
